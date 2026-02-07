@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Rose Day ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
+}
+
+.container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  animation: fadeIn 2s ease-in-out;
+}
+
+p {
+  font-size: 1.2em;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.rose {
+  font-size: 3em;
+  animation: pulse 1.5s infinite;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1em;
+  background: #ff4b5c;
+  color: white;
+  cursor: pointer;
+  animation: fadeIn 4s ease-in-out;
+}
+
+button:hover {
+  background: #ff1e38;
+}
+
+.falling {
+  position: absolute;
+  top: -50px;
+  font-size: 24px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="rose">🌹</div>
+  <h1>Happy Rose Day, Aarna ❤️</h1>
+  <p>
+    This rose is not just a flower,  
+    it’s my love, my care, and my promise.  
+    No matter the distance, my heart always chooses you.  
+  </p>
+  <p><b>I love you endlessly 🌹</b></p>
+  <button onclick="alert('🌹 This rose is forever yours ❤️')">Accept My Rose</button>
+</div>
+
+<script>
+function createRose() {
+  const rose = document.createElement('div');
+  rose.classList.add('falling');
+  rose.style.left = Math.random() * 100 + 'vw';
+  rose.style.animationDuration = (Math.random() * 3 + 2) + 's';
+  rose.innerHTML = '🌹';
+  document.body.appendChild(rose);
+
+  setTimeout(() => {
+    rose.remove();
+  }, 5000);
+}
+
+setInterval(createRose, 300);
+</script>
+
+</body>
+</html>
